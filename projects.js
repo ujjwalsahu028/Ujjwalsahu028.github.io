@@ -50,18 +50,23 @@ window.PORTFOLIO = {
   */
   projects: [
     {
-      title: "Gold Alert Bot",
+      title: "Gold Alert Bot (XAUUSD)",
       status: "done",
       date: "2026",
       tools: ["Python", "Automation"],
-      summary: "A Python bot that tracks gold prices and sends alerts.",
-      problem: "",        // kaun si problem solve karta hai (1-2 line)
-      approach: "",       // kaise banaya (data source, logic, tools)
-      insights: [],       // ["Result 1", "Result 2"]
+      summary: "A Python bot that analyses gold (XAUUSD) across 7 timeframes and sends a trading brief to Telegram and WhatsApp.",
+      problem: "Checking gold charts, the dollar index and economic news by hand takes time and is easy to get wrong. I wanted one automatic brief that combines everything into a clear, rule-based view.",
+      approach: "Pulled prices for gold, DXY, forex, indices, oil and Bitcoin from Yahoo Finance with yfinance and processed them with pandas. Combined EMA trends, RSI, MACD, Stochastic RSI, ATR, Bollinger Bands, pivot levels, market structure, DXY correlation and trading sessions into a weighted score that gives a BUY, SELL or WAIT view. Stop-loss and targets are sized from ATR. A weekly economic calendar flags high-impact USD news. Alerts go out through the Telegram Bot API and CallMeBot (WhatsApp), with API keys kept in environment variables.",
+      insights: [
+        "Combined 6 weighted factors into one score instead of relying on a single indicator.",
+        "Used DXY moves as a correlation check, since a rising dollar is usually bearish for gold.",
+        "Sized stop-loss and targets from ATR so risk adapts to market volatility.",
+        "Learning project only, not financial advice."
+      ],
       image: "",
       embed: "",
       links: {
-        github: "https://github.com/ujjwalsahu028/gold-alert-bot",
+        github: "https://github.com/ujjwalsahu028/gold-alert-bot1",
         live: "",
         notebook: ""
       }
